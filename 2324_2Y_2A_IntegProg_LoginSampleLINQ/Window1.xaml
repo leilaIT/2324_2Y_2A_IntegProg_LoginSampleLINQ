@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800" Closed="Window_Closed" Closing="Window_Closing">
     <Grid>
-        
+        <TextBlock x:Name="tblWelcome" HorizontalAlignment="Center" Margin="0,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Text="textblock" TextAlignment="Center" FontWeight="Bold"/>
+        <TextBlock x:Name="tblAskChange" HorizontalAlignment="Center" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Text="Would you like to change your username?" TextAlignment="Center"/>
+        <Button x:Name="btnYesChange" Content="Yes" HorizontalAlignment="Left" Height="38" Margin="233,299,0,0" VerticalAlignment="Top" Width="126" FontSize="16" Click="btnYesChange_Click"/>
+        <Button x:Name="btnNoChange" Content="No" HorizontalAlignment="Left" Height="38" Margin="442,299,0,0" VerticalAlignment="Top" Width="126" FontSize="16" Click="btnNoChange_Click"/>
+        <TextBox x:Name="txtbChangeUserName" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" Height="43" FontSize="16"/>
+        <TextBlock x:Name="tblChangeMessage" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Text="Change Username" TextAlignment="Center"/>
+        <Button x:Name="btnSave" Content="Save" Visibility="Hidden" HorizontalAlignment="Center" Height="38" Margin="0,329,0,0" VerticalAlignment="Top" Width="126" FontSize="16" Click="btnSave_Click"/>
+
     </Grid>
 </Window>

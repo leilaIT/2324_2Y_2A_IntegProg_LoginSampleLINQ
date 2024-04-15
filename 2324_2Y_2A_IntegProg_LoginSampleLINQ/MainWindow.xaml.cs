@@ -20,27 +20,22 @@ namespace _2324_2Y_2A_IntegProg_LoginSampleLINQ
     /// </summary>
     public partial class MainWindow : Window
     {
-        LoginSampleDataContext _lsDC = null;
-        string userName = "";
+        public static string userName = "";
         bool loginFlag = false;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            _lsDC = new LoginSampleDataContext(
-                Properties.Settings.Default._2324_1A_LoginSampleConnectionString);
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             loginFlag = false;
-            DateTime cDT = DateTime.Now;
 
             if(txtbUserName.Text.Length > 0 && txtbPassword.Text.Length > 0)
             {
                 //MessageBox.Show($"username is {txtbUserName.Text} password is {txtbPassword.Text}");
-                var loginQuery = from s in _lsDC.LoginUsers 
+                var loginQuery = from s in database._lsDC.LoginUsers 
                                  where 
                                     s.LoginID == txtbUserName.Text
                                  //&& s.Password == txtbPassword.Text
@@ -54,22 +49,23 @@ namespace _2324_2Y_2A_IntegProg_LoginSampleLINQ
                         {
                             loginFlag = true;
                             userName = login.Name;
-                            login.LastLoginDate = cDT;
+                            login.LastLoginDate = database.cDT;
 
                             Log log = new Log();
                             log.LoginID = login.LoginID;
-                            log.TimeStamp = cDT;
+                            log.TimeStamp = database.cDT;
 
-                            _lsDC.Logs.InsertOnSubmit(log);
-                            _lsDC.SubmitChanges();
+                            database._lsDC.Logs.InsertOnSubmit(log);
+                            database._lsDC.SubmitChanges();
+
                         }
                     }
                 }
 
-
                 if(loginFlag)
                 {
                     MessageBox.Show($"Login success! Welcome back {userName}!");
+                    //MessageBox.Show($"Login success! Redirecting to Home Page. . .");
                     Window1 w1 = new Window1();
                     w1.Show();
                     this.Close();

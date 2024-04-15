@@ -26,8 +26,9 @@ namespace _2324_2Y_2A_IntegProg_LoginSampleLINQ.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-E6RG946U;Initial Catalog=2324_1A_LoginSample;Integrated Securi" +
-            "ty=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-34HFC3NA\\SQLEXPRESS;Initial Catalog=2324_1A_LoginSample;Integr" +
+            "ated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" +
+            "")]
         public string _2324_1A_LoginSampleConnectionString {
             get {
                 return ((string)(this["_2324_1A_LoginSampleConnectionString"]));
